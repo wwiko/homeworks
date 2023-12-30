@@ -49,3 +49,28 @@ console.log(copiedObj.someFieldKey); // someFieldValue
 console.log(copiedObj.someMethod); // undefined
 console.log(obj === copiedObj); // false
 */
+
+/*
+// Задача 3
+let rectangle = {
+  length: 10,
+  width: 5,
+  height: 3,
+
+  getArea() {
+    return this.length * this.width;
+  },
+
+  getPerimeter() {
+    return 2 * (this.length + this.width);
+  },
+
+  getVolume() {
+    return this.length * this.width * this.height;
+  },
+};
+
+console.log(rectangle.getArea());
+console.log(rectangle.getPerimeter());
+console.log(rectangle.getVolume());
+*/
