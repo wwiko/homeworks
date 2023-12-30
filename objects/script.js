@@ -1,3 +1,4 @@
+/*
 // Задача 1
 function getDictionary(str) {
   const countedLetters = {};
@@ -21,3 +22,30 @@ function getDictionary(str) {
 }
 
 console.log(getDictionary("cat and DDddddog"));
+*/
+
+/*
+// Задача 2
+function getObjCopy(targetObject) {
+  const copiedObject = {};
+
+  for (let key in targetObject) {
+    if (typeof targetObject[key] != "function") {
+      copiedObject[key] = targetObject[key];
+    }
+  }
+
+  return copiedObject;
+}
+
+const obj = {
+  someFieldKey: "someFieldValue",
+  someMethod() {},
+};
+
+const copiedObj = getObjCopy(obj);
+
+console.log(copiedObj.someFieldKey); // someFieldValue
+console.log(copiedObj.someMethod); // undefined
+console.log(obj === copiedObj); // false
+*/
