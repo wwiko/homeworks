@@ -29,27 +29,21 @@ const customReduce = (arr, func, initial) => {
   return result;
 };
 
-let arr = [1, 2, 3, 4, 5];
-console.log(customReduce(arr, (sum, current) => sum + current));
-
 // Task 4
-const filterObjects = (arr, fieldName) => {};
+const filterObjects = (array, fieldName) => {
+  const result = [];
 
-const array = [
-  {
-    price: 150,
-    weight: 200,
-    id: "id-123",
-  },
-  {
-    height: 100,
-    isBig: false,
-    id: "id-123",
-  },
-  {
-    price: 159,
-    weight: 200,
-  },
-];
+  array.forEach((obj) => {
+    const existingObj = result.find(
+      (item) => item[fieldName] === obj[fieldName]
+    );
 
-// filterObjects(array, 'id') -> [{price: 150, weight: 200, height:    100, isBig: false, id: 'id-123' }, {price: 159, weight: 200}]
+    if (existingObj) {
+      Object.assign(existingObj, obj);
+    } else {
+      result.push({ ...obj });
+    }
+  });
+
+  return result;
+};
