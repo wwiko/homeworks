@@ -49,54 +49,23 @@ const filterObjects = (array, fieldName) => {
 };
 
 // Task 5
-// const getAverage = (arr) => {
-//   const map = new Map();
-
-//   arr.forEach((obj) => {
-//     const oneGenderArray = arr.filter((item) => item.gender === obj.gender);
-
-//     const avrObject = {
-//       avrAge:
-//         Math.floor(
-//           (oneGenderArray.reduce((result, item) => result + item.age, 0) /
-//             oneGenderArray.length) *
-//             10
-//         ) / 10,
-//       avrIncome:
-//         Math.floor(
-//           (oneGenderArray.reduce((result, item) => result + item.income, 0) /
-//             oneGenderArray.length) *
-//             10
-//         ) / 10,
-//     };
-
-//     const doesKeyExist = map.has(obj.gender);
-
-//     if (!doesKeyExist) {
-//       map.set(obj.gender, avrObject);
-//     }
-//   });
-
-//   return Object.fromEntries(map);
-// };
-
 const getAverage = (arr) => {
   const result = {};
 
   arr.forEach((obj) => {
-    const oneGenderArray = arr.filter((item) => item.gender === obj.gender);
+    const oneGenderArr = arr.filter((item) => item.gender === obj.gender);
 
     const avrObject = {
       avgAge:
         Math.floor(
-          (oneGenderArray.reduce((result, item) => result + item.age, 0) /
-            oneGenderArray.length) *
+          (oneGenderArr.reduce((result, item) => result + item.age, 0) /
+            oneGenderArr.length) *
             10
         ) / 10,
       avgIncome:
         Math.floor(
-          (oneGenderArray.reduce((result, item) => result + item.income, 0) /
-            oneGenderArray.length) *
+          (oneGenderArr.reduce((result, item) => result + item.income, 0) /
+            oneGenderArr.length) *
             10
         ) / 10,
     };
@@ -130,53 +99,17 @@ const getAverage = (arr) => {
 //   }, {});
 // };
 
-const array = [
-  {
-    name: "Bob",
-    gender: "Male",
-    age: 20,
-    income: 1000,
-  },
-  {
-    name: "John",
-    gender: "Male",
-    age: 35,
-    income: 3000,
-  },
-  {
-    name: "Pete",
-    gender: "Male",
-    age: 7,
-    income: 0,
-  },
-  {
-    name: "Kate",
-    gender: "Female",
-    age: 25,
-    income: 2000,
-  },
-  {
-    name: "Lawrence",
-    gender: "Female",
-    age: 12,
-    income: 30,
-  },
-  {
-    name: "Chris",
-    gender: "Female",
-    age: 56,
-    income: 5000,
-  },
-  {
-    name: "Maksim",
-    gender: "Trans",
-    age: 56,
-    income: 5000,
-  },
-];
+// Task 6
+const getCommon = (arr1, arr2) => {
+  const set = new Set();
 
-console.log(getAverage(array));
-// {
-//   Male: { avgAge: 20.6, avgIncome: 1333.3 },
-//   Female: { avgAge: 31, avgIncome: 2343.3 },
-// };
+  for (const item1 of arr1) {
+    for (const item2 of arr2) {
+      if (JSON.stringify(item1) === JSON.stringify(item2)) {
+        set.add(item2);
+      }
+    }
+  }
+
+  return [...set];
+};
