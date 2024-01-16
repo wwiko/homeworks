@@ -75,30 +75,6 @@ const getAverage = (arr) => {
   return result;
 };
 
-// const getAverage = (arr) => {
-//   return arr.reduce((object, obj) => {
-//     const oneGenderArray = arr.filter((item) => item.gender === obj.gender);
-
-//     const avrObject = {
-//       avgAge:
-//         Math.floor(
-//           (oneGenderArray.reduce((result, item) => result + item.age, 0) /
-//             oneGenderArray.length) *
-//             10
-//         ) / 10,
-//       avgIncome:
-//         Math.floor(
-//           (oneGenderArray.reduce((result, item) => result + item.income, 0) /
-//             oneGenderArray.length) *
-//             10
-//         ) / 10,
-//     };
-//     object[obj.gender] = avrObject;
-
-//     return object;
-//   }, {});
-// };
-
 // Task 6
 const getCommon = (arr1, arr2) => {
   const set = new Set();
@@ -115,8 +91,15 @@ const getCommon = (arr1, arr2) => {
 };
 
 // Task 7
-const getWeekDay = (dateStr) => {
+const getWeekDay = (date) => {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const dayIndex = new Date(Date.parse(dateStr)).getDay();
+  const dayIndex = new Date(Date.parse(date)).getDay();
   return days[dayIndex];
+};
+
+// Task 8
+const getDifference = (date1, date2) => {
+  const day1 = new Date(Date.parse(date1)).getDate();
+  const day2 = new Date(Date.parse(date2)).getDate();
+  return Math.abs(day2 - day1);
 };
