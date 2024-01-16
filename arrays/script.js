@@ -113,3 +113,10 @@ const getCommon = (arr1, arr2) => {
 
   return [...set];
 };
+
+// Task 7
+const getWeekDay = (dateStr) => {
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const dayIndex = new Date(Date.parse(dateStr)).getDay();
+  return days[dayIndex];
+};
