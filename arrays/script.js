@@ -99,7 +99,6 @@ const getWeekDay = (date) => {
 
 // Task 8
 const getDifference = (date1, date2) => {
-  const day1 = new Date(Date.parse(date1)).getDate();
-  const day2 = new Date(Date.parse(date2)).getDate();
-  return Math.abs(day2 - day1);
+  const differenceInDays = (Date.parse(date2) - Date.parse(date1)) / 86400000;
+  return Math.abs(differenceInDays);
 };
