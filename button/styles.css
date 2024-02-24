@@ -1,0 +1,82 @@
+body {
+  background-color: #fff;
+  box-sizing: cont-box; }
+  body .btn-container {
+    margin-top: 100px;
+    margin-left: 500px; }
+    body .btn-container .btn {
+      padding: 0;
+      border: 1px #b2b5c3 solid;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 1px 1px 4px #b2b5c3;
+      position: relative;
+      background-color: #fff; }
+      body .btn-container .btn-start {
+        border: 1px #b2b5c3 solid;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: #1a75c9;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        body .btn-container .btn-start .plus {
+          width: 20px;
+          height: 20px; }
+      body .btn-container .btn-end {
+        opacity: 0;
+        position: absolute;
+        border: 1px #b2b5c3 solid;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: #e2ecfe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        transition: 0.3s ease-in-out; }
+        body .btn-container .btn-end .hand {
+          width: 25px;
+          height: 25px; }
+      body .btn-container .btn:hover .btn-end {
+        opacity: 1; }
+      body .btn-container .btn .textbox {
+        background-color: #fff;
+        position: absolute;
+        right: 6px;
+        border: 1px #b2b5c3 solid;
+        box-shadow: 1px 1px 6px #b2b5c3;
+        border-radius: 50px;
+        height: 45px;
+        width: 150px;
+        transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: 0.25s ease-in-out; }
+        body .btn-container .btn .textbox-inner {
+          width: 210px;
+          height: 40px;
+          background-color: #1a75c9;
+          margin: 0;
+          border-radius: 21px; }
+        body .btn-container .btn .textbox p {
+          position: absolute;
+          left: 20px;
+          white-space: nowrap;
+          color: #fff;
+          font-size: 12px; }
+  body .btn:hover {
+    cursor: pointer; }
+  body .btn:hover .textbox {
+    width: 220px;
+    opacity: 1; }
+
+/*# sourceMappingURL=styles.css.map */
